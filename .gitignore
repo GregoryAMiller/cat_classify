@@ -1,0 +1,9 @@
+*.jpg
+*.pkl
+*.h5
+CIFAR_10_Image_Classification.ipynb
+*.csv
+*pt
+images
+test
+videos
