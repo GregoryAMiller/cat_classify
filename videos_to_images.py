@@ -7,10 +7,10 @@ import os
 frame_rate = 30
 
 # Loop through all the video files in the folder
-for file in os.listdir("C:/Users/Grego/Documents/chat_GPT/cat_classify/videos/Asha/"):
+for file in os.listdir("C:/Users/Grego/Desktop/cat_classify/videos/Asha/"):
   # Load the image file
 #   print(file)
-    video = mp.VideoFileClip(f"C:/Users/Grego/Documents/chat_GPT/cat_classify/videos/Asha/{file}")
+    video = mp.VideoFileClip(f"C:/Users/Grego/Desktop/cat_classify/videos/Asha/{file}")
     print(f'Loading {file}.......')
     
     image_label = file.split(".")[0]
@@ -23,13 +23,13 @@ for file in os.listdir("C:/Users/Grego/Documents/chat_GPT/cat_classify/videos/As
             image = Image.fromarray(frame)
             image = image.resize((200, 200))
             # image = image.convert("L")
-            image.save("C:/Users/Grego/Documents/chat_GPT/cat_classify/images/Asha/{}Z{}_1.jpg".format(image_label, i))
+            image.save("C:/Users/Grego/Documents/Desktop/images/Asha/{}Z{}_1.jpg".format(image_label, i))
 
 # Loop through all the video files in the folder
-for file in os.listdir("C:/Users/Grego/Documents/chat_GPT/cat_classify/videos/Annie/"):
+for file in os.listdir("C:/Users/Grego/Documents/Desktop/videos/Annie/"):
   # Load the image file
 #   print(file)
-    video = mp.VideoFileClip(f"C:/Users/Grego/Documents/chat_GPT/cat_classify/videos/Annie/{file}")
+    video = mp.VideoFileClip(f"C:/Users/Grego/Documents/Desktop/videos/Annie/{file}")
     print(f'Loading {file}.......')
     
     image_label = file.split(".")[0]
@@ -42,14 +42,14 @@ for file in os.listdir("C:/Users/Grego/Documents/chat_GPT/cat_classify/videos/An
             image = Image.fromarray(frame)
             image = image.resize((200, 200))
             # image = image.convert("L")
-            image.save("C:/Users/Grego/Documents/chat_GPT/cat_classify/images/Annie/{}Z{}_3.jpg".format(image_label, i))
+            image.save("C:/Users/Grego/Desktop/cat_classify/images/Annie/{}Z{}_3.jpg".format(image_label, i))
 
 
 # Loop through all the video files in the folder
-for file in os.listdir("C:/Users/Grego/Documents/chat_GPT/cat_classify/videos/Bree/"):
+for file in os.listdir("C:/Users/Grego/Desktop/cat_classify/videos/Bree/"):
   # Load the image file
 #   print(file)
-    video = mp.VideoFileClip(f"C:/Users/Grego/Documents/chat_GPT/cat_classify/videos/Bree/{file}")
+    video = mp.VideoFileClip(f"C:/Users/Grego/Desktop/cat_classify/videos/Bree/{file}")
     print(f'Loading {file}.......')
     
     image_label = file.split(".")[0]
@@ -62,7 +62,7 @@ for file in os.listdir("C:/Users/Grego/Documents/chat_GPT/cat_classify/videos/Br
             image = Image.fromarray(frame)
             image = image.resize((200, 200))
             # image = image.convert("L")
-            image.save("C:/Users/Grego/Documents/chat_GPT/cat_classify/images/Bree/{}Z{}_2.jpg".format(image_label, i))
+            image.save("C:/Users/Grego/Desktop/cat_classify/images/Bree/{}Z{}_2.jpg".format(image_label, i))
   
   
     

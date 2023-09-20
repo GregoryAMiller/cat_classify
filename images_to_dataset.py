@@ -7,10 +7,10 @@ import os
 df = pd.DataFrame()
 
 # Loop through all the image files in the folder
-for folder in os.listdir("C:/Users/Grego/Documents/chat_GPT/cat_classify/images/"):
-  for file in os.listdir(f"C:/Users/Grego/Documents/chat_GPT/cat_classify/images/{folder}"):
+for folder in os.listdir("C:/Users/Grego/Desktop/cat_classify/images/"):
+  for file in os.listdir(f"C:/Users/Grego/Desktop/cat_classify/images/{folder}"):
     # Load the image file
-    image = Image.open(f'C:/Users/Grego/Documents/chat_GPT/cat_classify/images/{folder}/{file}')
+    image = Image.open(f'C:/Users/Grego/Desktop/cat_classify/images/{folder}/{file}')
     print(f'Loading {file}.......')
   
     # Preprocess the image as needed (e.g. resize, convert to grayscale, normalize)
@@ -34,4 +34,4 @@ for folder in os.listdir("C:/Users/Grego/Documents/chat_GPT/cat_classify/images/
   
 # Save the DataFrame to a CSV file
 print('Saving data to CSV file......')
-df.to_csv("C:/Users/Grego/Documents/chat_GPT/cat_classify/dataset.csv", index=False)
+df.to_csv("C:/Users/Grego/Desktop/cat_classify/dataset.csv", index=False)
