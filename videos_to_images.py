@@ -16,26 +16,26 @@ for file in os.listdir("C:/Users/Grego/Desktop/cat_classify/videos/Asha/"):
     image_label = file.split(".")[0]
 
     # Iterate through the frames of the video
-    for i, frame in enumerate(video.iter_frames()):
+    for i, frame in enumerate(video.iter_frames(fps=frame_rate)):
         # Save every other frame as a JPEG image
         if i % frame_rate == 0:
             # Preprocess the image as needed (e.g. resize, convert to grayscale)
             image = Image.fromarray(frame)
             image = image.resize((200, 200))
             # image = image.convert("L")
-            image.save("C:/Users/Grego/Documents/Desktop/images/Asha/{}Z{}_1.jpg".format(image_label, i))
+            image.save("C:/Users/Grego/Desktop/cat_classify/images/Asha/{}Z{}_1.jpg".format(image_label, i))
 
 # Loop through all the video files in the folder
-for file in os.listdir("C:/Users/Grego/Documents/Desktop/videos/Annie/"):
+for file in os.listdir("C:/Users/Grego/Desktop/cat_classify/videos/Annie/"):
   # Load the image file
 #   print(file)
-    video = mp.VideoFileClip(f"C:/Users/Grego/Documents/Desktop/videos/Annie/{file}")
+    video = mp.VideoFileClip(f"C:/Users/Grego/Desktop/cat_classify/videos/Annie/{file}")
     print(f'Loading {file}.......')
     
     image_label = file.split(".")[0]
 
     # Iterate through the frames of the video
-    for i, frame in enumerate(video.iter_frames()):
+    for i, frame in enumerate(video.iter_frames(fps=frame_rate)):
         # Save every other frame as a JPEG image
         if i % frame_rate == 0:
             # Preprocess the image as needed (e.g. resize, convert to grayscale)
@@ -55,7 +55,7 @@ for file in os.listdir("C:/Users/Grego/Desktop/cat_classify/videos/Bree/"):
     image_label = file.split(".")[0]
 
     # Iterate through the frames of the video
-    for i, frame in enumerate(video.iter_frames()):
+    for i, frame in enumerate(video.iter_frames(fps=frame_rate)):
         # Save every other frame as a JPEG image
         if i % frame_rate == 0:
             # Preprocess the image as needed (e.g. resize, convert to grayscale)

@@ -1,4 +1,5 @@
 *.jpg
+*.json
 *.pkl
 *.h5
 CIFAR_10_Image_Classification.ipynb
