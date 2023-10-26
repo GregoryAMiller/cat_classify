@@ -2,35 +2,31 @@ import numpy as np
 import pandas as pd
 from PIL import Image
 import os
+from io import BytesIO
 
 # Create an empty DataFrame to store the data
 df = pd.DataFrame()
 
 # Loop through all the image files in the folder
 for folder in os.listdir("C:/Users/Grego/Desktop/cat_classify/images/"):
-  for file in os.listdir(f"C:/Users/Grego/Desktop/cat_classify/images/{folder}"):
-    # Load the image file
-    image = Image.open(f'C:/Users/Grego/Desktop/cat_classify/images/{folder}/{file}')
-    print(f'Loading {file}.......')
-  
-    # Preprocess the image as needed (e.g. resize, convert to grayscale, normalize)
-    # image = np.array(image) / 255
-  
-    # Flatten the image into a 1D array of pixels
-    # pixels = image.flatten()
-  
-    # Extract the label from the file name (assumes the file name is in the format "image_<label>.jpg")
-    label = int(file.split("_")[1].split(".")[0])
-  
-    # Create a new row with one column for each pixel
-    row = {}
-    # for i, pixel in enumerate(pixels):
-    #   row["pixel_{}".format(i)] = pixel
-    row["image"] = image
-    row["label"] = label
-  
-    # Concatenate the new row to the DataFrame
-    df = pd.concat([df, pd.DataFrame([row])], ignore_index=True)
+    for file in os.listdir(f"C:/Users/Grego/Desktop/cat_classify/images/{folder}"):
+        # Load the image file
+        image_path = f'C:/Users/Grego/Desktop/cat_classify/images/{folder}/{file}'
+        image = Image.open(image_path)
+        print(f'Loading {file}.......')
+
+        # Convert the PIL Image to numpy array and then to a comma-separated string
+        img_array = np.array(image)
+        img_string = ','.join(map(str, img_array.flatten()))
+
+        # Extract the label from the file name (assumes the file name is in the format "image_<label>.jpg")
+        label = int(file.split("_")[1].split(".")[0])
+
+        # Create a new row with the image string and label
+        row = {"image": img_string, "label": label}
+
+        # Concatenate the new row to the DataFrame
+        df = pd.concat([df, pd.DataFrame([row])], ignore_index=True)
   
 # Save the DataFrame to a CSV file
 print('Saving data to CSV file......')
